@@ -1,0 +1,15 @@
+{
+    "require": {
+        "components/jquery": "1.11.0",
+        "components/metismenu": "v3.0.4",
+        "components/font-awesome": "5.13.1",
+        "components/bootstrap": "3.4.1",
+        "kendu/sb-admin-2": "dev-master"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}
