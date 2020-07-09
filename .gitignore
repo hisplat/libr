@@ -3,3 +3,4 @@ vendor
 logs
 components
 composer.lock
+default.php
