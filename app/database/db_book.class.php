@@ -47,6 +47,11 @@ class db_book extends database_table {
         return $this->update(array("avatar" => $avatar), "id = $id");
     }
 
+    public function updateUserinfo($bookid, $openid, $nickname, $headimgurl) {
+        $bookid = (int)$bookid;
+        return $this->update(array("openid" => $openid, "nickname" => $nickname, "headimgurl" => $headimgurl), "bookid = $bookid");
+    }
+
     public function remove($id) {
         $id = (int)$id;
         return $this->delete("id = $id");

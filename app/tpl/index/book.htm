@@ -13,8 +13,8 @@
         <div class="clear">
             <div class="col-md-3 col-xs-3"><img class="fill" v-bind:src="user.headimgurl"></img></div>
             <div class="col-md-9 col-xs-9">
-                <button v-if="book.stat == 1" class="btn btn-primary col-md-12 col-lg-12 col-sm-12 col-xs-12">借阅</button>
-                <button v-if="book.stat == 2" class="btn btn-warning col-md-12 col-lg-12 col-sm-12 col-xs-12">归还</button>
+                <button v-if="book.stat == 1" class="btn btn-primary col-md-12 col-lg-12 col-sm-12 col-xs-12" v-on:click="borrow">借阅</button>
+                <button v-if="book.stat == 2" class="btn btn-warning col-md-12 col-lg-12 col-sm-12 col-xs-12" v-on:click="returnback">归还</button>
                 <button v-if="book.stat == 0" class="btn btn-danger col-md-12 col-lg-12 col-sm-12 col-xs-12" v-on:click="publish">发布</button>
             </div>
         </div>

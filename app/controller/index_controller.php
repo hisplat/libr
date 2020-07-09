@@ -7,7 +7,8 @@ class index_controller {
         $userinfo = get_request_assert("userinfo");
         $userinfo = base64_decode($userinfo);
         $userinfo = json_decode($userinfo, true);
-        // dump_var($userinfo);
+
+        $_SESSION["userinfo"] = $userinfo;
 
         $bookid = $userinfo["request"]["bookid"];
         $openid = $userinfo["openid"];
@@ -70,6 +71,24 @@ class index_controller {
         }, $arg);
 
         return array("op" => "index.update", "data" => $ret);
+    }
+
+    public function borrow_action() {
+        $userinfo = get_session_assert("userinfo");
+        $bookid = $userinfo["request"]["bookid"];
+        $openid = $userinfo["openid"];
+        $nickname = $userinfo["nickname"];
+        $headimgurl = $userinfo["headimgurl"];
+ 
+        $ret = db_book::inst()->updateUserinfo($bookid, $openid, $nickname, $headimgurl);
+        return array("op" => "index.borrow", "data" => $ret);
+    }
+
+    public function returnback_action() {
+        $userinfo = get_session_assert("userinfo");
+        $bookid = $userinfo["request"]["bookid"];
+        $ret = db_book::inst()->updateUserinfo($bookid, "", "", "");
+        return array("op" => "index.borrow", "data" => $ret);
     }
 
 }

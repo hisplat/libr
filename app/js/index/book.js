@@ -66,6 +66,18 @@ $(document).ready(function() {
                 reader.readAsDataURL(file);
                 return true;
             },
+            borrow: function(event) {
+                console.log("borrow.");
+                __request("index.borrow", {bookid: page.book.id, openid: page.user.openid}, function(data) {
+                    document.location.reload();
+                });
+            },
+            returnback: function(event) {
+                console.log("returnback.");
+                __request("index.returnback", {bookid: page.book.id, openid: page.user.openid}, function(data) {
+                    window.location.reload();
+                });
+            },
         }
     });
 
