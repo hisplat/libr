@@ -1,0 +1,13 @@
+
+<div id="page-content">
+    <div v-if="books == null">
+        loading...
+    </div>
+    <div v-if="books != null">
+        <div v-for="(b, k) in books" class="bookwrapper border pull-left">
+            <div class="booktitle text-center"><label>{{b.title}}</label></div>
+            <div><img class="bookface border" v-bind:src="b.avatarUrl"></img></div>
+            <div><div v-if="b.openid != null"><img class="user-face-md border" v-bind:src="b.headimgurl"></img><span>{{b.nickname}}</span></div><div v-if="b.openid == null" class="text-center lh34"><label>未借出</label></div></div>
+        </div>
+    </div>
+</div>
