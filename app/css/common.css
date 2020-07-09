@@ -228,7 +228,7 @@ img.user-face-sm {
 img.user-face-md {
     width: 42px;
     height: 42px;
-    border-radius: 42px;
+    /* border-radius: 42px; */
 }
 
 img.user-face {

@@ -47,11 +47,12 @@ class index_controller {
     }
 
 
-    public function view_action() {
-        login::assert_login();
-        $balanceid = get_request_assert("id");
-        $tpl = new tpl();
-        $tpl->display("index/view");
+    public function list_action() {
+        $books = db_book::inst()->all();
+        foreach ($books as $k => $v) {
+            $books[$k]["avatarUrl"] = UPLOAD_URL . $v["avatar"];
+        }
+        return array("op" => "list", "data" => $books);
     }
 
     public function update_action() {
@@ -87,7 +88,7 @@ class index_controller {
     public function returnback_action() {
         $userinfo = get_session_assert("userinfo");
         $bookid = $userinfo["request"]["bookid"];
-        $ret = db_book::inst()->updateUserinfo($bookid, "", "", "");
+        $ret = db_book::inst()->updateUserinfo($bookid, null, null, null);
         return array("op" => "index.borrow", "data" => $ret);
     }
 

@@ -1,0 +1,38 @@
+
+.bookwrapper {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 376px;
+    width: 223px;
+    max-height: 376px;
+    max-width: 223px;
+    border: 1px solid #000;
+}
+
+.booktitle {
+    font-size: 18px;
+}
+
+.bookface {
+    /* position: absolute; */
+    z-index: 1000;
+    width: 220.5px;
+    height: 300px;
+    max-width: 220.5px;
+    max-height: 300px;
+}
+
+.star {
+    position: absolute;
+    color: yellow;
+    padding-left: 3px;
+    padding-right: 3px;
+    top: 5px;
+    left: 2px;
+}
+
+.book-status {
+    position: absolute;
+    top: 188px;
+    left: -5px;
+}
