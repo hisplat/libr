@@ -11,6 +11,8 @@
 
 .booktitle {
     font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .bookface {
