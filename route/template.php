@@ -13,5 +13,6 @@ defined('VENDOR_URL') or define('VENDOR_URL', ROOT_URL . INSTANCE_URL . "/vendor
 
 defined('DEBUG') or define('DEBUG', true);
 
-// defined('JIRA_URL') or define('JIRA_URL', "http://JIRAURL/rest/api/2/myself");
+defined('KEY_WECHAT_APPID') or define('KEY_WECHAT_APPID', '');
+defined('KEY_WECHAT_APPSECRET') or define('KEY_WECHAT_APPSECRET', '');
 

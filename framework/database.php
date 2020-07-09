@@ -255,7 +255,7 @@ class database_table {
         self::OPTION_RECONNECT => false,
     );
 
-    protected function __construct($db, $table) {
+    public function __construct($db, $table) {
         $this->dbname = $db;
         $this->database = new database();
         try {
